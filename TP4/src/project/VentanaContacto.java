@@ -129,9 +129,11 @@ public class VentanaContacto extends JFrame {
 			//EJERCICIO 1 - FUNCIONALIDAD
 			public void actionPerformed(ActionEvent arg0) {
 							
-							
+					
+					
 					if(txtApellido.getText().isEmpty()) {		
 						txtApellido.setBackground(Color.RED); //ASI SE SETEA UN COLOR
+						
 					}
 					else {
 						txtApellido.setBackground(Color.WHITE);
@@ -161,8 +163,10 @@ public class VentanaContacto extends JFrame {
 
 					}
 					
-					
-					lblMostrar.setText(txtApellido.getText() +", " + txtNombre.getText() + " - " + txtFechaNac.getText() + " - " + txtTelefono.getText()); 
+					//VALIDACION SOLO SI TODOS LOS CAMPOS ESTAN COMPLETOS
+					if(!(txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtFechaNac.getText().isEmpty())) {
+						lblMostrar.setText(txtApellido.getText() +", " + txtNombre.getText() + " - " + txtFechaNac.getText() + " - " + txtTelefono.getText()); 
+					}
 
 				
 				
