@@ -7,7 +7,10 @@ import javax.swing.JLabel;
 public class Principal {
 
 	public static void main(String[] args) {
-		VentanaMain ven = new VentanaMain();
+		
+		VentanaContacto ventContacto = new VentanaContacto();
+		
+		VentanaMain ven = new VentanaMain(ventContacto);
 		ven.getContentPane().setFont(new Font("Yu Gothic", Font.PLAIN, 12));
 		ven.getContentPane().setLayout(null);
 		
@@ -16,7 +19,6 @@ public class Principal {
 		lblGrupo.setBounds(20, 23, 87, 31);
 		ven.getContentPane().add(lblGrupo);
 		ven.cambiarVisibilidad(true);
-		
 
 	}
 
