@@ -14,10 +14,7 @@ public class Principal {
 		ven.getContentPane().setFont(new Font("Yu Gothic", Font.PLAIN, 12));
 		ven.getContentPane().setLayout(null);
 		
-		JLabel lblGrupo = new JLabel("Grupo 5");
-		lblGrupo.setFont(new Font("Sitka Subheading", Font.PLAIN, 18));
-		lblGrupo.setBounds(20, 23, 87, 31);
-		ven.getContentPane().add(lblGrupo);
+	
 		ven.cambiarVisibilidad(true);
 
 	}
