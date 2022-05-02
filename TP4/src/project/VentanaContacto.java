@@ -166,7 +166,12 @@ public class VentanaContacto extends JFrame {
 					//VALIDACION SOLO SI TODOS LOS CAMPOS ESTAN COMPLETOS
 					if(!(txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtFechaNac.getText().isEmpty())) {
 						lblMostrar.setText(txtApellido.getText() +", " + txtNombre.getText() + " - " + txtFechaNac.getText() + " - " + txtTelefono.getText()); 
-					}
+						txtApellido.setText(null);
+						txtNombre.setText(null);
+						txtFechaNac.setText(null);
+						txtTelefono.setText(null);	
+						
+						}
 
 				
 				
