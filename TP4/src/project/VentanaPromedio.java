@@ -109,40 +109,98 @@ public class VentanaPromedio extends JFrame {
 		contentPane.add(cbTPS);
 		
 		
-		JLabel lblPromedio = new JLabel("Promedio:");
+		JLabel lblPromedio = new JLabel("Promedio");
 		lblPromedio.setBounds(50, 305, 62, 14);
 		contentPane.add(lblPromedio);
 		
-		JLabel lblCondicin = new JLabel("Condici\u00F3n:");
+		JLabel lblCondicin = new JLabel("Condici\u00F3n");
 		lblCondicin.setBounds(50, 333, 62, 14);
 		contentPane.add(lblCondicin);
 		
 		txtPromedio = new JTextField();
+		txtPromedio.setEditable(false);
 		txtPromedio.setColumns(10);
-		txtPromedio.setBounds(109, 302, 108, 20);
+		txtPromedio.setBounds(109, 302, 139, 20);
 		contentPane.add(txtPromedio);
 		
 		txtCondicion = new JTextField();
+		txtCondicion.setEditable(false);
 		txtCondicion.setColumns(10);
-		txtCondicion.setBounds(109, 330, 108, 20);
+		txtCondicion.setBounds(109, 330, 139, 20);
 		contentPane.add(txtCondicion);
 		
 		//FUNCIONALIDAD DEL EJERCICIO 2
 		JButton btnCalcular = new JButton("CALCULAR");
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				float nota1, nota2, nota3, promedio;
+				String TPS;
 				
+				nota1 = Float.parseFloat(txtNota1.getText());
+				nota2 = Float.parseFloat(txtNota2.getText());
+				nota3 = Float.parseFloat(txtNota3.getText());
+				TPS = (String) cbTPS.getSelectedItem();
 				
-			}
+				promedio = (nota1 + nota2 + nota3)/3;
+				
+				//SETEO EL PROMEDIO
+				txtPromedio.setText(""+promedio+"");
+				
+				if(TPS == "Aprobado") 
+				{				
+					//CONDICION DE REGULAR
+					if(nota1 >= 6 && nota2 >= 6 && nota3 >= 6)
+					{
+						//CONDICION DE PROMOCION
+						if(nota1 >= 8 && nota2 >= 8 && nota3 >= 8) 
+						{
+							txtCondicion.setText("Promocionado");
+						}
+						else 
+						{
+							txtCondicion.setText("Regular");		
+						}				
+					}
+					//ALGUNA NOTA INFERIOR A 6
+					else 
+					{
+						txtCondicion.setText("Libre");
+					}
+				}
+				else 
+				{
+					txtCondicion.setText("Libre");
+				}
+			} 
+			
+			
+				
 		});
 		btnCalcular.setBounds(267, 107, 97, 23);
 		contentPane.add(btnCalcular);
 		
+		//FUNCIONALIDAD DEL BOTON NUEVO
 		JButton btnNuevo = new JButton("NUEVO");
+		btnNuevo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txtPromedio.setText("");
+				txtCondicion.setText("");
+				txtNota1.setText("");
+				txtNota2.setText("");
+				txtNota3.setText("");				
+			}
+		});
 		btnNuevo.setBounds(267, 132, 97, 23);
 		contentPane.add(btnNuevo);
 		
+		//FUNCIONALIDAD DEL BOTON SALIR
 		JButton btnSalir = new JButton("SALIR");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(EXIT_ON_CLOSE);
+			}
+		});
+		
 		btnSalir.setBounds(267, 157, 97, 23);
 		contentPane.add(btnSalir);
 		
@@ -153,7 +211,7 @@ public class VentanaPromedio extends JFrame {
 		
 		Box horizontalBox_1 = Box.createHorizontalBox();
 		horizontalBox_1.setBorder(new TitledBorder(null, "Promedio y Condici\u00F3n", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		horizontalBox_1.setBounds(26, 266, 222, 112);
+		horizontalBox_1.setBounds(26, 266, 248, 112);
 		contentPane.add(horizontalBox_1);
 	}
 }
