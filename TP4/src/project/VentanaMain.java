@@ -19,9 +19,10 @@ public class VentanaMain extends JFrame{
 	private JButton boton1, boton2, boton3;
 	private JFrame ventanaContacto;
 	private JFrame ventanaPromedio;
+	private JFrame ventanaSO;
 	
 	
-	public VentanaMain(JFrame ventContacto ,JFrame ventPromedio)
+	public VentanaMain(JFrame ventContacto ,JFrame ventPromedio ,JFrame ventSO)
 	{
 		getContentPane().setFont(new Font("Tahoma", Font.BOLD, 13));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,6 +31,7 @@ public class VentanaMain extends JFrame{
 		
 		this.ventanaContacto = ventContacto;
 		this.ventanaPromedio = ventPromedio;
+		this.ventanaSO = ventSO;
 		
 		boton1 = new JButton();
 		boton2 = new JButton();
@@ -43,6 +45,7 @@ public class VentanaMain extends JFrame{
 		
 		boton1.addActionListener(new EventoAbrirVentana(ventanaContacto));
 		boton2.addActionListener(new EventoAbrirVentana(ventanaPromedio));
+		boton3.addActionListener(new EventoAbrirVentana(ventanaSO));
 		
 		getContentPane().add(boton1);
 		getContentPane().add(boton2);

@@ -17,8 +17,13 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+
 public class VentanaSO extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private ButtonGroup bg = new ButtonGroup();
@@ -43,7 +48,7 @@ public class VentanaSO extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaSO() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Seleccion Multiple");
 		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
