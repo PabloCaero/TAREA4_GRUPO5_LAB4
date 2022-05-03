@@ -136,13 +136,42 @@ public class VentanaPromedio extends JFrame {
 				float nota1, nota2, nota3, promedio;
 				String TPS;
 				
+				if(!txtNota1.getText().matches("[+-]?\\d*(\\.\\d+)?") )
+				{
+					nota1 = 0;
+					nota2 =  0;
+					nota3 =  0;
+					txtNota1.setText("Solo numeros");
+					TPS = (String) cbTPS.getSelectedItem();	
+				}
+				
+				if(!txtNota2.getText().matches("[+-]?\\d*(\\.\\d+)?") )
+				{
+					nota1 = 0;
+					nota2 =  0;
+					nota3 =  0;
+					txtNota2.setText("Solo numeros");
+					TPS = (String) cbTPS.getSelectedItem();	
+				}
+				
+				
+				if(!txtNota3.getText().matches("[+-]?\\d*(\\.\\d+)?"))
+				{
+					nota1 = 0;
+					nota2 =  0;
+					nota3 =  0;
+					txtNota3.setText("Solo numeros");
+					TPS = (String) cbTPS.getSelectedItem();	
+				}
+				else
+				{
 				nota1 = Float.parseFloat(txtNota1.getText());
 				nota2 = Float.parseFloat(txtNota2.getText());
 				nota3 = Float.parseFloat(txtNota3.getText());
 				TPS = (String) cbTPS.getSelectedItem();
-				
+				}
 				promedio = (nota1 + nota2 + nota3)/3;
-				
+			
 				//SETEO EL PROMEDIO
 				txtPromedio.setText(""+promedio+"");
 				
