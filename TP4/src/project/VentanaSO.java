@@ -163,7 +163,7 @@ public class VentanaSO extends JFrame {
 					}
 					
 					if(rdbtnDiseoGrafico.isSelected() && rdbtnAdministracion.isSelected() == false && rdbtnProgramacion.isSelected()==false) {
-						Mensaje = "Windows -Diseño Grafico - " + textField.getText() + " HS";							
+						Mensaje = "Windows - Diseño Grafico - " + textField.getText() + " HS";							
 					}
 										
 					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected()==false) {
