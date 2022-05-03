@@ -12,10 +12,13 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class VentanaSO extends JFrame {
@@ -109,7 +112,112 @@ public class VentanaSO extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
+		//FUNCIONALIDAD EJERCICIO 3
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+				String Mensaje;				
+				Mensaje = "Debe seleccionar y llenar los campos solicitados";
+				
+				//COMBINACIONES POSIBLES LINUX										
+				if(rdbtnLinux.isSelected()) {										
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() == false && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Linux - Programación - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnAdministracion.isSelected() && rdbtnProgramacion.isSelected() == false && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Linux - Administración - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnDiseoGrafico.isSelected() && rdbtnAdministracion.isSelected() == false && rdbtnProgramacion.isSelected()==false) {
+						Mensaje = "Linux -Diseño Grafico - " + textField.getText() + " HS";							
+					}
+										
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Linux - Programación - Administración - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnProgramacion.isSelected() && rdbtnDiseoGrafico.isSelected() && rdbtnAdministracion.isSelected() == false) {
+						Mensaje = "Linux - Programación - Diseño Gráfico - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected() && rdbtnProgramacion.isSelected() == false) {
+						Mensaje = "Linux - Administración - Diseño Gráfico - " + textField.getText() + " HS";							
+					}
+													
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected()) {
+						Mensaje = "Linux - Programación - Administración - Diseño Gráfico - " + textField.getText() + " HS";							
+					}																	
+				}
+				
+				
+				//COMBINACIONES POSIBLES WINDOWS
+				if(rdbtnWindows.isSelected()) {					
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() == false && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Windows - Programación - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnAdministracion.isSelected() && rdbtnProgramacion.isSelected() == false && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Windows - Administración - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnDiseoGrafico.isSelected() && rdbtnAdministracion.isSelected() == false && rdbtnProgramacion.isSelected()==false) {
+						Mensaje = "Windows -Diseño Grafico - " + textField.getText() + " HS";							
+					}
+										
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Windows - Programación - Administración - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnProgramacion.isSelected() && rdbtnDiseoGrafico.isSelected() && rdbtnAdministracion.isSelected() == false) {
+						Mensaje = "Windows - Programación - Diseño Gráfico - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected() && rdbtnProgramacion.isSelected() == false) {
+						Mensaje = "Windows - Administración - Diseño Gráfico - " + textField.getText() + " HS";							
+					}
+													
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected()) {
+						Mensaje = "Windows - Programación - Administración - Diseño Gráfico - " + textField.getText() + " HS";							
+					}									
+				}
+				
+				//COMBINACIONES POSIBLES MAC
+				if(rdbtnMac.isSelected()) {					
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() == false && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Mac - Programación - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnAdministracion.isSelected() && rdbtnProgramacion.isSelected() == false && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Mac - Administración - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnDiseoGrafico.isSelected() && rdbtnAdministracion.isSelected() == false && rdbtnProgramacion.isSelected()==false) {
+						Mensaje = "Mac -Diseño Grafico - " + textField.getText() + " HS";							
+					}
+										
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected()==false) {
+						Mensaje = "Mac - Programación - Administración - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnProgramacion.isSelected() && rdbtnDiseoGrafico.isSelected() && rdbtnAdministracion.isSelected() == false) {
+						Mensaje = "Mac - Programación - Diseño Gráfico - " + textField.getText() + " HS";							
+					}
+					
+					if(rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected() && rdbtnProgramacion.isSelected() == false) {
+						Mensaje = "Mac - Administración - Diseño Gráfico - " + textField.getText() + " HS";							
+					}
+													
+					if(rdbtnProgramacion.isSelected() && rdbtnAdministracion.isSelected() && rdbtnDiseoGrafico.isSelected()) {
+						Mensaje = "Mac - Programación - Administración - Diseño Gráfico - " + textField.getText() + " HS";							
+					}							
+				}
+				
+				JOptionPane.showMessageDialog(null,Mensaje,"Mensaje", JOptionPane.INFORMATION_MESSAGE);		
+				
+			}
+		});
 		btnAceptar.setBounds(294, 277, 89, 23);
 		contentPane.add(btnAceptar);
 	}
