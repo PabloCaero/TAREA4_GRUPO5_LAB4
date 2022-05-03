@@ -16,6 +16,8 @@ import java.awt.GridLayout;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class VentanaContacto extends JFrame {
 
@@ -100,8 +102,11 @@ public class VentanaContacto extends JFrame {
 		contentPane.add(lblTelfono);
 		
 		txtTelefono = new JTextField();
+		txtTelefono.setForeground(new Color(0, 0, 0));
+		txtTelefono.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		txtTelefono.setBounds(146, 89, 336, 41);
 		txtTelefono.setColumns(10);
+		
 		contentPane.add(txtTelefono);
 		
 		JLabel label_2 = new JLabel("");
@@ -115,6 +120,7 @@ public class VentanaContacto extends JFrame {
 		txtFechaNac = new JTextField();
 		txtFechaNac.setBounds(146, 130, 336, 41);
 		txtFechaNac.setColumns(10);
+
 		contentPane.add(txtFechaNac);
 		
 		JLabel label_3 = new JLabel("");
@@ -159,22 +165,30 @@ public class VentanaContacto extends JFrame {
 					}
 					
 					
-					if(txtTelefono.getText().isEmpty()) {		
+					if(txtTelefono.getText().isEmpty()  ) {		
 						txtTelefono.setBackground(Color.RED); //ASI SE SETEA UN COLOR
+						
 					}
 					else {
 						txtTelefono.setBackground(Color.WHITE);
 
 					}
 					
+					if( !txtTelefono.getText().matches("[+-]?\\d*(\\.\\d+)?") ) {		
+						
+						txtTelefono.setText("Formato invalido");
+						}
+					
+                   
+					
 					//VALIDACION SOLO SI TODOS LOS CAMPOS ESTAN COMPLETOS
 					if(!(txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtFechaNac.getText().isEmpty())) {
-						lblMostrar.setText(txtApellido.getText() +", " + txtNombre.getText() + " - " + txtFechaNac.getText() + " - " + txtTelefono.getText()); 
+						lblMostrar.setText(txtApellido.getText() +" " + txtNombre.getText() + " - " + txtFechaNac.getText() + " - " + txtTelefono.getText()); 
 						txtApellido.setText(null);
 						txtNombre.setText(null);
 						txtFechaNac.setText(null);
 						txtTelefono.setText(null);	
-						
+					
 						}
 
 				

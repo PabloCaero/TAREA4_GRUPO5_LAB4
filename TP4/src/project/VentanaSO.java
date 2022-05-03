@@ -57,10 +57,10 @@ public class VentanaSO extends JFrame {
 		
 		Box horizontalBox = Box.createHorizontalBox();
 		horizontalBox.setBorder(new LineBorder(new Color(0, 0, 0)));
-		horizontalBox.setBounds(10, 11, 379, 66);
+		horizontalBox.setBounds(31, 11, 379, 66);
 		contentPane.add(horizontalBox);
 		
-		JLabel lblElijeUnaEspecialidad = new JLabel("Elije un sistema operativo");
+		JLabel lblElijeUnaEspecialidad = new JLabel("      Elije un sistema operativo");
 		horizontalBox.add(lblElijeUnaEspecialidad);
 		
 		JRadioButton rdbtnWindows = new JRadioButton("Windows");
@@ -81,7 +81,7 @@ public class VentanaSO extends JFrame {
 		contentPane.add(rdbtnProgramacion);
 		
 		JRadioButton rdbtnAdministracion = new JRadioButton("Administracion");
-		rdbtnAdministracion.setBounds(239, 137, 109, 23);
+		rdbtnAdministracion.setBounds(239, 137, 144, 23);
 		contentPane.add(rdbtnAdministracion);
 		
 		JRadioButton rdbtnDiseoGrafico = new JRadioButton("Dise\u00F1o Grafico");
@@ -94,10 +94,10 @@ public class VentanaSO extends JFrame {
 		
 		Box horizontalBox_1 = Box.createHorizontalBox();
 		horizontalBox_1.setBorder(new LineBorder(new Color(0, 0, 0)));
-		horizontalBox_1.setBounds(10, 90, 379, 112);
+		horizontalBox_1.setBounds(31, 90, 379, 112);
 		contentPane.add(horizontalBox_1);
 		
-		JLabel lblElijeUnaEspecialidad_1 = new JLabel("Elije una especialidad");
+		JLabel lblElijeUnaEspecialidad_1 = new JLabel("        Elije una especialidad");
 		horizontalBox_1.add(lblElijeUnaEspecialidad_1);
 		
 		JLabel lblCantidadDeHoras = new JLabel("Cantidad de horas en el computador");
@@ -110,7 +110,7 @@ public class VentanaSO extends JFrame {
 		textField.setColumns(10);
 		
 		JButton btnAceptar = new JButton("Aceptar");
-		btnAceptar.setBounds(321, 265, 89, 23);
+		btnAceptar.setBounds(294, 277, 89, 23);
 		contentPane.add(btnAceptar);
 	}
 }
